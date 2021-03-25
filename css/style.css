@@ -369,8 +369,12 @@ h3 { font-size: var(--fs-h3); }
     }
 }
 
-/* My Work */
+.about-me__skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
 
+/* My Work */
 .my-work {
     background-color: var(--clr-dark);
     color: var(--clr-light);
