@@ -333,6 +333,10 @@ h3 { font-size: var(--fs-h3); }
     margin: 0 auto;
 }
 
+.about-me a{
+    color: var(--clr-accent);
+}
+
 .about-me__img {
     box-shadow: var(--bs);
 }
