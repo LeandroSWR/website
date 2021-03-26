@@ -311,7 +311,7 @@ h3 { font-size: var(--fs-h3); }
 }
 
 .service {
-    max-width: 600px;
+    max-width: 330px;
     margin: 0 auto;
 }
 
