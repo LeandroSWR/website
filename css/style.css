@@ -162,7 +162,7 @@ h3 { font-size: var(--fs-h3); }
     display: flex;
     height: 100%;
     flex-direction: column;
-    line-height: 4em;
+    line-height: 3.8em;
     padding-left: 10%;
     padding-top: 1.5em;
 }
@@ -172,6 +172,7 @@ h3 { font-size: var(--fs-h3); }
     font-weight: var(--fw-bold);
     font-size: var(--fs-h3);
     text-decoration: none;
+    text-align: center;
 }
 
 .nav__link:hover {
@@ -214,12 +215,11 @@ h3 { font-size: var(--fs-h3); }
     display: flex;
     justify-content: center;
     margin-left: -1.5em;
-    margin-top: -5em;
+    margin-top: -5.5em;
 }
 
 .nav__social--item {
     margin-left: .05em;
-    margin-right: .05em;
 }
 
 .nav__social--item a {
@@ -520,3 +520,39 @@ h3 { font-size: var(--fs-h3); }
     margin-left: auto;
     margin-right: auto;
 }
+
+/* Tooltips*/
+
+.tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 0;
+    margin-top: -1.8em;
+    margin-left: -3em;
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity .6s;
+}
+
+.tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+
+.social-list__link:hover .tooltiptext,
+.nav__social--item:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
