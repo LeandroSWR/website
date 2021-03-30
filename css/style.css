@@ -163,9 +163,8 @@ h3 { font-size: var(--fs-h3); }
     height: 100%;
     flex-direction: column;
     line-height: 4em;
-    padding-left: 20%;
-    padding-top: 3em;
-    padding-bottom: 5em;
+    padding-left: 10%;
+    padding-top: 1.5em;
 }
 
 .nav__link {
@@ -210,7 +209,22 @@ h3 { font-size: var(--fs-h3); }
     opacity: 0;
 }
 
+.nav__social {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-left: -1.5em;
+    margin-top: -5em;
+}
 
+.nav__social--item {
+    margin-left: .05em;
+    margin-right: .05em;
+}
+
+.nav__social--item a {
+    color: var(--clr-accent);
+}
 
 .hamburger {
     display: block;
@@ -344,7 +358,7 @@ h3 { font-size: var(--fs-h3); }
 }
 
 .about-me__img {
-    box-shadow: var(--bs);
+    display: none;
 }
 
 @media (min-width: 600px) {
@@ -373,6 +387,8 @@ h3 { font-size: var(--fs-h3); }
     }
 
     .about-me__img {
+        display: inherit;
+        box-shadow: var(--bs);
         grid-area: img;
         position: relative;
         z-index: 2;
