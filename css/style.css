@@ -64,6 +64,11 @@ img {
     outline-offset: 3px;
 }
 
+mark {
+    background-color: #d4faf4;
+    color: black;
+}
+
 /* Buttons*/
 
 .btn {
@@ -556,4 +561,30 @@ h3 { font-size: var(--fs-h3); }
         visibility: visible;
         opacity: 1;
     }
+}
+
+/* Project Links */
+
+.project-links {
+    font-size: var(--fs-h2);
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-top: -0.3em;
+    margin-bottom: -0.3em;
+    padding: 0;
+}
+
+.project-links__item {
+    margin-left: .5em;
+    margin-right: .5em;
+}
+
+.project-links__link {
+    color: var(--clr-accent);
+    padding: .5em;
+}
+
+.project-links__link:hover {
+    opacity: .5;
 }
