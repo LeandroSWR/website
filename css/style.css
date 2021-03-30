@@ -550,9 +550,10 @@ h3 { font-size: var(--fs-h3); }
     border-color: black transparent transparent transparent;
 }
 
-.social-list__link:hover .tooltiptext,
-.nav__social--item:hover .tooltiptext {
-    visibility: visible;
-    opacity: 1;
+@media (min-width: 650px) {
+    .social-list__link:hover .tooltiptext,
+    .nav__social--item:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+    }
 }
-
