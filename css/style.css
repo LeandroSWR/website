@@ -21,6 +21,8 @@
     --fs-body: 1rem;
     --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25), 
         0.125em 0.125em 0.25em rgba(0,0,0,.15);
+    --bs-darker: 0.25em 0.25em 0.75em rgba(0,0,0,.5), 
+        0.125em 0.125em 0.25em rgba(0,0,0,.25);
     --aspect-ratio: 1/1;
     --scaling: scale(1.35);
 }
@@ -587,4 +589,85 @@ h3 { font-size: var(--fs-h3); }
 
 .project-links__link:hover {
     opacity: .5;
+}
+
+/* Modal */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    animation-name: animatebg;
+    animation-duration: 0.8s;
+    background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+    color: white;
+}
+
+@keyframes animatebg {
+    from {
+        background-color: rgba(0,0,0,0); /* Black w/ opacity */
+    }
+
+    to {
+        background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+    }
+}
+
+.modal-content {
+    position: relative;
+    margin: auto;
+    padding: 0;
+    top: 300px;
+    width: 30%;
+    border-radius: 15px;
+    box-shadow: var(--bs-darker);
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    background-color: #353535;
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+
+    to {
+        top: 300px;
+        opacity: 1;
+    }
+}
+
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    font-family: var(--ff-primary);
+    padding: 2px 16px;
+    border-radius: 15px 15px 0px 0px;
+}
+
+.modal-header h2 {
+    margin-top: 15px;
+    font-size: 40px;
+}
+
+.modal-body {
+    padding: 2px 16px;
+    border-radius: 0px 0px 15px 15px;
 }
