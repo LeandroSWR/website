@@ -621,7 +621,7 @@ h3 { font-size: var(--fs-h3); }
     position: relative;
     margin: auto;
     padding: 0;
-    top: 35%;
+    top: 15%;
     width: 80%;
     border-radius: 15px;
     box-shadow: var(--bs-darker);
@@ -637,7 +637,7 @@ h3 { font-size: var(--fs-h3); }
     }
 
     to {
-        top: 35%;
+        top: 15%;
         opacity: 1;
     }
 }
