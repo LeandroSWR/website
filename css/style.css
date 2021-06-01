@@ -622,7 +622,7 @@ h3 { font-size: var(--fs-h3); }
     margin: auto;
     padding: 0;
     top: 300px;
-    width: 30%;
+    width: calc(0.3 * 1920px);
     border-radius: 15px;
     box-shadow: var(--bs-darker);
     animation-name: animatetop;
@@ -657,14 +657,18 @@ h3 { font-size: var(--fs-h3); }
 }
 
 .modal-header {
-    font-family: var(--ff-primary);
     padding: 2px 16px;
     border-radius: 15px 15px 0px 0px;
 }
 
+@media (min-width: 800px) {
+    .modal-header h2 {
+        font-size: 40px;
+    }
+}
+
 .modal-header h2 {
     margin-top: 15px;
-    font-size: 40px;
 }
 
 .modal-body {
