@@ -1,0 +1,102 @@
+header {
+    height: 100vh;
+    padding-top: 7rem;
+    overflow: hidden;
+}
+
+.header__container {
+    text-align: center;
+    height: 100%;
+    position: relative;
+}
+
+/* =============== CALL TO ACTION =============== */
+
+.cta {
+    margin-top: 2.5rem;
+    display: flex;
+    gap: 1.2rem;
+    justify-content: center;
+}
+
+/* =============== HEADER SOCIALS =============== */
+
+.header__socials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    position: absolute;
+    left: 0;
+    bottom: 1rem;
+}
+
+.header__socials::after {
+    content: '';
+    width: 1px;
+    height: 5rem;
+    background: var(--color-primary);
+}
+
+/* =============== HEADER ME =============== */
+
+.me {
+    background: linear-gradient(var(--color-primary), transparent);
+    width: 22rem;
+    height: 24rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-11rem);
+    margin-top: 4rem;
+    border-radius: 12rem 12rem 0 0;
+    overflow: hidden;
+    padding: 5rem 1.5rem 1.5rem 1.5rem;
+}
+
+/* =============== SCROLL DOWN =============== */
+
+
+
+.scroll__down {
+    transform: rotate(90deg);
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: -2.3rem;
+    gap: 0.6rem;
+    font-weight: 300;
+    font-size: 0.9rem;
+    bottom: 6rem;
+}
+
+.scroll__down::after {
+    content: '';
+    width: 5rem;
+    height: 1px;
+    transition: var(--transition);
+    background: var(--color-primary);
+}
+
+.scroll__down:hover::after {
+    background: var(--color-white);
+}
+
+/* =============== MEDIA QUERIES (MEDIUM DEVICES) =============== */
+
+@media screen and (max-width: 1024px) {
+    header {
+        height: 68vh;
+    }
+}
+
+/* =============== MEDIA QUERIES (SMALL DEVICES) =============== */
+
+@media screen and (max-width: 600px) {
+    header {
+        height: 100vh;
+    }
+
+    .header__socials, .scroll__down {
+        display: none;
+    }
+}
