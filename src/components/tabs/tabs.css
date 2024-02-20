@@ -1,0 +1,63 @@
+.tabs-container {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    user-select: none;
+  }
+  
+  .tab-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    background-color: #2d2d30;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  .tab {
+    padding: 10px 15px;
+    cursor: pointer;
+    color: #ccc;
+    border: 1px solid transparent;
+    border-bottom: none;
+    background-color: #2d2d30;
+    transition: background-color 0.3s ease;
+    position: relative;
+    top: 1px;
+  }
+  
+  .tab:hover,
+  .tab.active {
+    background-color: #1e1e1e;
+  }
+  
+  .tab.active {
+    color: #fff;
+    border-color: #3f3f46;
+    border-bottom-color: transparent;
+  }
+  
+  .tab:not(:first-child) {
+    border-left: none;
+  }
+  
+  .tab-content {
+    background-color: #1e1e1e;
+    color: #dcdcdc;
+    padding: 20px;
+    border-top: 1px solid #3f3f46;
+  }
+  
+  /* Scrollbar Styles */
+  .tab-list::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  .tab-list::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border-radius: 4px;
+  }
+  
+  .tab-list::-webkit-scrollbar-track {
+    background: #333;
+  }
+  

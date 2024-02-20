@@ -7,21 +7,23 @@ import Services from './components/services/Services';
 import Portfolio from './components/portfolio/Portfolio';
 import Contact from './components/contact/Contact';
 import Footer from './components/footer/Footer';
+import Tabs from './components/tabs/tabs';
 
 const App = () => {
   return (
     <>
-        <Header />
-        <Nav />
-        <About />
-        <Experience />
-        <Services />
-        <Portfolio />
-        <Contact />
-        <Footer />
-
+        <Tabs />
     </>
   )
 }
+
+//<Header />
+//<Nav />
+//<About />
+//<Experience />
+//<Services />
+//<Portfolio />
+//<Contact />
+//<Footer />
 
 export default App
