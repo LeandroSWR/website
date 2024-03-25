@@ -1,20 +1,22 @@
 import React, { useState, useEffect, useRef } from 'react';
 import ME from '../../assets/Me_full.png'
 import './game.css'; // Your CSS file for styling
+import Rigidbody from './engine/Rigidbody.js'
 
 const Game = () => {
-  const [playerPosition, setPlayerPosition] = useState({ x: 50, y: 50 });
+  const [playerPosition, setPlayerPosition] = useState({ x: 50, y: 50});
+  const playerRigidbody = useRef(new Rigidbody(98.7, 10)); // Initialize with gravity
   const keysPressed = useRef({});
   const requestRef = useRef();
   const previousTimeRef = useRef();
-  // Handle fps
-  const [fps, setFps] = useState(0);
-  const fpsInterval = 1000 / 60;
-  const lastFpsUpdate = useRef(performance.now());
-  const frameCount = useRef(0);
   
-  // Player Stats
+  const lastFpsUpdate = useRef(performance.now());
+  const [fps, setFps] = useState(0);
+  const frameCount = useRef(0);
+
+  // Constants
   const playerSpeed = 10;
+  const fpsInterval = 16.66666666666667;
 
   const handleKeyDown = (event) => {
     keysPressed.current[event.key] = true;
@@ -25,18 +27,29 @@ const Game = () => {
   };
 
   const movePlayer = (deltaTime) => {
-    setPlayerPosition((prevPosition) => {
-      let newX = prevPosition.x;
-      if (keysPressed.current['ArrowLeft']) {
-        newX = Math.max(prevPosition.x - playerSpeed * deltaTime, 0);
-      }
-      if (keysPressed.current['ArrowRight']) {
-        newX = Math.min(prevPosition.x + playerSpeed * deltaTime, 100); // Assuming 100 is the max x value
-      }
-      return {
-        ...prevPosition,
-        x: newX
-      };
+    // Handle movement
+    if (keysPressed.current['ArrowLeft']) {
+      playerRigidbody.current.velocity.x = -playerSpeed;
+    }
+    else if (keysPressed.current['ArrowRight']) {
+      playerRigidbody.current.velocity.x = playerSpeed;
+    }
+    else {
+      playerRigidbody.current.velocity.x = 0;
+    }
+
+    // Handle jumping
+    if (keysPressed.current['ArrowUp']) {
+      playerRigidbody.current.jump();
+    }
+    else {
+      playerRigidbody.current.stopJump(); // This will shorten the jump if the button is released
+    }
+
+    playerRigidbody.current.update(deltaTime);
+    setPlayerPosition( {
+      x: playerRigidbody.current.position.x,
+      y: playerRigidbody.current.position.y
     });
   };
 
