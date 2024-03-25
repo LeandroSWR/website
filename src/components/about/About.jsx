@@ -1,21 +1,22 @@
 import React from 'react'
 import './about.css'
-import ME from '../../assets/me_about.png'
+import ME from '../../assets/Me_full.png'
 import { FaAward } from 'react-icons/fa'
 import { VscFolderLibrary } from 'react-icons/vsc'
 import { BiAtom } from 'react-icons/bi'
 
 const About = () => {
   return (
+
+    
+
     <section id='about'>
       <h5>Get to know</h5>
       <h2>About Me</h2>
 
       <div className="container about__container">
         <div className="about__me">
-          <div className="about__me-image">
-            <img src={ME} alt="About Me" />
-          </div>
+          <img src={ME} alt="About Me" />
         </div>
         <div className="about__content">
           <div className="about__cards">

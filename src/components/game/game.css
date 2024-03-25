@@ -1,0 +1,25 @@
+.game-area {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden; /* Prevent scrolling */
+    background-color: #skyblue; /* Just an example */
+  }
+  
+  .player {
+    position: absolute;
+    width: 50px; /* Adjust size as needed */
+    height: 50px;
+    background-color: #red; /* Just an example */
+    /* add background image for your character */
+  }
+  
+  .coin {
+    position: absolute;
+    width: 20px; /* Adjust size as needed */
+    height: 20px;
+    background-color: #yellow; /* Just an example */
+    /* add background image for your coin */
+    cursor: pointer;
+  }
+  

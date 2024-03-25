@@ -1,39 +1,47 @@
 .tabs-container {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     user-select: none;
+    background: transparent; /* Background of the tab bar */
+    /*overflow: hidden;*/
+    margin-top: 2%;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 2%;
+}
+  
+.tab-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: inline-flex;
+  overflow-x: auto;
+  border-bottom: 1px solid #3f3f46; /* Border under the tab bar */
+}
+
+.tab {
+  padding: 6px 12px;
+  cursor: pointer;
+  color: #bbb;
+  background: #2d2d30;
+  border: 1px solid #252526; /* Border color for tabs */
+  border-bottom: none;
+  margin-right: 2px; /* Space between tabs */
+  transition: background-color 0.3s ease;
+  position: relative;
+  top: 1px;
+  border-top-left-radius: 4px; /* Rounded corners on the top-left */
+  border-top-right-radius: 4px; /* Rounded corners on the top-right */
+}
+  
+  .tab:hover {
+    background: #1e1e1e; /* Background color for hover state */
   }
   
-  .tab-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    background-color: #2d2d30;
-    overflow-x: auto;
-    white-space: nowrap;
-  }
-  
-  .tab {
-    padding: 10px 15px;
-    cursor: pointer;
-    color: #ccc;
-    border: 1px solid transparent;
-    border-bottom: none;
-    background-color: #2d2d30;
-    transition: background-color 0.3s ease;
-    position: relative;
-    top: 1px;
-  }
-  
-  .tab:hover,
   .tab.active {
-    background-color: #1e1e1e;
-  }
-  
-  .tab.active {
+    background: #1e1e1e; /* Background color for active state */
     color: #fff;
-    border-color: #3f3f46;
-    border-bottom-color: transparent;
+    border-top: 3px solid #0097fb; /* Highlight color for active tab */
+    padding-top: 4px; /* Adjust padding to maintain tab height with border */
   }
   
   .tab:not(:first-child) {
@@ -41,23 +49,29 @@
   }
   
   .tab-content {
-    background-color: #1e1e1e;
-    color: #dcdcdc;
+    background: #1e1e1e; /* Background of the content area */
+    color: #dcdcdc; /* Text color for content */
     padding: 20px;
-    border-top: 1px solid #3f3f46;
+    max-height: 80vh;
+    border-top: 1px solid #3f3f46; /* Border color for content area */
   }
   
-  /* Scrollbar Styles */
-  .tab-list::-webkit-scrollbar {
-    height: 8px;
+  .tab-end-space {
+    background-color: transparent; /* or the color of your tab container background */
+    /* Other styles that might be affecting the appearance */
   }
-  
-  .tab-list::-webkit-scrollbar-thumb {
-    background-color: #555;
-    border-radius: 4px;
-  }
-  
-  .tab-list::-webkit-scrollbar-track {
-    background: #333;
-  }
+
+  /* Additional styles for scrollbar if needed */
+.tab-list::-webkit-scrollbar {
+  height: 8px;
+}
+
+.tab-list::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 4px;
+}
+
+.tab-list::-webkit-scrollbar-track {
+  background: #333;
+}
   
